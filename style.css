@@ -2,12 +2,11 @@
     box-sizing: border-box;
 }
 :root{
-    --color-blue1:#00a2ff;
-    --color-blue2:#6EB4D1;
-    --color-blue3:#91b7c7;
+    --color-blue:#00a2ff;
+    --color-dark-gray:#666666;
     --color-gray:#E2E8F0;
-    --color-pink:#bd9391;
     --color-white:#ffffff;
+    --color-yellow:#ffe100;
     --font-main:'Roboto', sans-serif;
 }
 body {
@@ -16,14 +15,15 @@ body {
 /* MAIN CONTAINER */
 .container{
     background-color: var(--color-gray);
-    width: 100vw;
-    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 0.5fr auto auto;
+    height: 100vh;
+    width: 100vw;
+
     grid-template-areas:"menu profile profile"
-                        "menu projects announcements"
-                        "menu projects trending";
+                        "menu projects discover"
+                        "menu projects discover";
 }
 .container>*{
     border: 1px solid red;
@@ -31,71 +31,72 @@ body {
 
 /* MENU */
 .menu{
-    background-color: var(--color-blue1);
-    grid-area: menu;
+    background-color: var(--color-blue);
     color: var(--color-white);
     display: flex;
     flex-direction: column;
     gap: 40px;
+    grid-area: menu;
 }
 a,a:link,a:visited{
     color: var(--color-white);
+    cursor: pointer;
     text-decoration: none;
 }
 .link{
-    font-size: 20px;
-    font-weight: 600;
-    padding: 20px 0 0 20px;
-    display: flex;
-    gap: 15px;
     align-items: center;
     cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 15px;
+    padding: 20px 0 0 20px;
 }
 .link a:hover,h1:hover{
     color: var(--color-gray);
 }
 .title .link{
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
 }
 .link img{
-    width: 40px;
     padding: 10px;
+    width: 40px;
 }
 .title img{
-    width: 40px;
     padding: 0;
+    width: 40px;
 }
 /* PROFILE */
 .profile{
     background-color: var(--color-white);
-    grid-area: profile;
-    padding: 20px 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    grid-area: profile;
     justify-content: space-between;
+    padding: 20px 50px;
 }
 .top{
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
 }
 .top >div{
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 20px;
 }
 label{
     cursor: pointer;
 }
 input{
-    border: 0;
     background-color: var(--color-gray);
-    padding: 8px;
-    width: 40vw;
+    border: 0;
     border-radius: 20px;
     outline: 0;
+    padding: 8px;
+    width: 40vw;
 }
 .top img{
     width: 20px;
@@ -108,8 +109,8 @@ input{
 }
 
 .bottom{
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
 }
 .username{
@@ -122,8 +123,8 @@ input{
 .username div{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 8px;
+    justify-content: center;
 }
 .username p{
     font-size: 10px;
@@ -134,34 +135,75 @@ input{
     text-wrap: wrap;
 }
 .profile-actions{
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: clamp(240px,25%,350px);
 }
 .bottom button{
-    cursor: pointer;
+    background-color: var(--color-blue);
     border: 0;
-    font-weight: 600;
-    color: var(--color-white);
-    background-color: var(--color-blue1);
-    padding: 10px 30px;
     border-radius: 20px;
+    color: var(--color-white);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 30px;
 }
+
 /* PROJECTS */
 .projects{
     background-color: var(--color-gray);
     grid-area: projects;
+    padding: 20px 15px;
 }
+h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.projects-list{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.project{
+    background-color: var(--color-white);
+    border-left: 7px solid var(--color-yellow);
+    border-radius: 8px;
+    padding: 25px 20px;
+    height: 1fr;
 
+}
+.project h3{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.project p{
+    color: var(--color-dark-gray);
+    font-size: 14px;
+    font-weight: 400;
+    height:120px;
+}
+.project-actions{
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+.project-actions img{
+    width: 25px;
+}
+/* DISCOVER */
+.discover{
+    grid-area: discover;
+    background-color: var(--color-gray);
+}
 /* ANNOUNCEMENTS */
 .announcements{
-    background-color: var(--color-gray);
-    grid-area: announcements;
+    padding: 20px 0;
 }
 
 /* TRENDING */
 .trending{
-    background-color: var(--color-gray);
-    grid-area: trending;
+    padding: 20px 0;
 }
