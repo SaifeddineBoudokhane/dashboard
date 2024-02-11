@@ -5,7 +5,7 @@
     --color-blue1:#00a2ff;
     --color-blue2:#6EB4D1;
     --color-blue3:#91b7c7;
-    --color-gray:#adbabd;
+    --color-gray:#E2E8F0;
     --color-pink:#bd9391;
     --color-white:#ffffff;
     --font-main:'Roboto', sans-serif;
@@ -70,8 +70,84 @@ a,a:link,a:visited{
 .profile{
     background-color: var(--color-white);
     grid-area: profile;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top >div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+label{
+    cursor: pointer;
+}
+input{
+    border: 0;
+    background-color: var(--color-gray);
+    padding: 8px;
+    width: 40vw;
+    border-radius: 20px;
+    outline: 0;
+}
+.top img{
+    width: 20px;
+}
+.top .profile-picture{
+    width: 40px;
+}
+.top h2{
+    font-weight: 600;
 }
 
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.username{
+    display: flex;
+    gap: 8px;
+}
+.username .profile-picture{
+    width: 70px;
+}
+.username div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+.username p{
+    font-size: 10px;
+    font-weight: 700;
+}
+.username h2{
+    font-weight: 700;
+    text-wrap: wrap;
+}
+.profile-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: clamp(240px,25%,350px);
+}
+.bottom button{
+    cursor: pointer;
+    border: 0;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: var(--color-blue1);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
 /* PROJECTS */
 .projects{
     background-color: var(--color-gray);
