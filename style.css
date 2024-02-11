@@ -1,0 +1,45 @@
+*, *::after,*::before{
+    box-sizing: border-box;
+}
+:root{
+    --color-blue1:#6cbeed;
+    --color-blue2:#6EB4D1;
+    --color-blue3:#91b7c7;
+    --color-gray:#adbabd;
+    --color-pink:#bd9391;
+    --color-white:#ffffff;
+}
+.container{
+    background-color: var(--color-gray);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas:"menu profile profile"
+                        "menu projects announcements"
+                        "menu projects trending";
+}
+.container>*{
+    border: 1px solid red;
+}
+.menu{
+    background-color: var(--color-blue1);
+    grid-area: menu;
+}
+.profile{
+    background-color: var(--color-white);
+    grid-area: profile;
+}
+.projects{
+    background-color: var(--color-gray);
+    grid-area: projects;
+}
+.announcements{
+    background-color: var(--color-gray);
+    grid-area: announcements;
+}
+.trending{
+    background-color: var(--color-gray);
+    grid-area: trending;
+}
